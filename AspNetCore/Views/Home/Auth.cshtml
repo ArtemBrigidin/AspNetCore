@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Auth";
+}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/js/Login.js"></script>
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+
+<div class="login-container">
+    <form class="login-form" method="post" action="/Api/Login">
+        <h2>Авторизация</h2>
+        <div class="form-group">
+            <label for="logUsername">Логин</label>
+            <input type="text" id="logUsername" name="username" placeholder="Логин" required>
+        </div>
+        <div class="form-group">
+            <label for="logPassword">Пароль</label>
+            <input type="password" id="logPassword" name="password" placeholder="Пароль" required>
+        </div>
+        <button type="submit">Авторизация</button>
+        <h5 onclick="ShowOrCloseLoginForm()">Зарегистрироваться</h5>
+    </form>
+
+    <form class="registration-form" style="display:none;">
+        <h2>Регистрация</h2>
+        <div class="form-group">
+            <label for="regUsername">Логин</label>
+            <input type="text" id="regUsername" name="username" placeholder="Логин" required>
+        </div>
+        <div class="form-group">
+            <label for="regEmail">Почта</label>
+            <input type="email" id="regEmail" name="email" placeholder="Эл. Почта" required>
+        </div>
+        <div class="form-group">
+            <label for="regPassword">Пароль</label>
+            <input type="password" id="regPassword" name="password" placeholder="Пароль" required>
+        </div>
+        <div class="form-group">
+            <label for="regRetryPassword">Повтор пароль</label>
+            <input type="password" id="regRetryPassword" name="password_confirmation" placeholder="Повтор пароля" required>
+        </div>
+        <button type="submit">Регистрация</button>
+        <h5 onclick="ShowOrCloseLoginForm()">Авторизоваться</h5>
+    </form>
+</div>
